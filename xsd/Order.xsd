@@ -1,0 +1,25 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<xs:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.rules.example" 
+            targetNamespace="http://www.rules.example"  elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Order" type="OrderT"/>
+    <xs:element name="item" type="ItemT"/>
+    <xs:complexType name="OrderT">
+        <xs:sequence>
+            <xs:element name="orderId" type="xs:string"/>
+            <xs:element name="items" type="OrderItemCollection"/>
+        </xs:sequence>
+    </xs:complexType> 
+     <xs:complexType name="OrderItemCollection">
+        <xs:sequence>
+            <xs:element name="item" type="ItemT" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+     <xs:complexType name="ItemT">
+        <xs:sequence>
+            <xs:element name="productId" type="xs:string"/>
+            <xs:element name="quantity" type="xs:integer"/>
+            <xs:element name="unitPrice" type="xs:decimal"/>
+            <xs:element name="extraCharge" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

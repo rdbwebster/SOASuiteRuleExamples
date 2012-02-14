@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Order xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.rules.example xsd/Order.xsd"
+       xmlns="http://www.rules.example">
+  <orderId></orderId>
+  <items>
+    <item>
+      <productId></productId>
+      <quantity></quantity>
+      <unitPrice></unitPrice>
+      <extraCharge></extraCharge>
+    </item>
+  </items>
+</Order>

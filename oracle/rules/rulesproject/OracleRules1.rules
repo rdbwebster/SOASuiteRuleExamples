@@ -1,0 +1,1406 @@
+<?xml version="1.0"?>
+<RuleDictionary id="G}-3dd9d023:128a7fe3ddf:-7fff" xmlns="http://xmlns.oracle.com/rules/dictionary">
+    <Name>OracleRules1</Name>
+    <Alias>OracleRules1</Alias>
+    <Package>rulesproject</Package>
+    <Version>11.1.1.0.0</Version>
+    <DataModel id="L}2">
+        <CreationUpdateNumber>2</CreationUpdateNumber>
+        <Function id="G}-7745b19e:1295bd80fce:-7c28">
+            <Name>testShipRateRules</Name>
+            <Alias>testShipRateRules</Alias>
+            <Visible>true</Visible>
+            <CreationUpdateNumber>1106</CreationUpdateNumber>
+            <IDofType>J}boolean</IDofType>
+            <ListContentID>B}nil</ListContentID>
+            <Type>boolean</Type>
+            <IDofBucketSet>B}bbs</IDofBucketSet>
+            <BucketSet>boolean</BucketSet>
+            <Form>Structured</Form>
+            <Action id="L}2779">
+                <Form>Call</Form>
+                <Target>print</Target>
+                <ResolvedTarget>`B}function.println`</ResolvedTarget>
+                <Expression id="L}2780">
+                    <Value>&quot;Testing Rules&quot;</Value>
+                    <ResolvedValue>&quot;Testing Rules&quot;</ResolvedValue>
+                    <IsConstant>false</IsConstant>
+                    <ParameterAlias>message</ParameterAlias>
+                    <ParameterID>B}function.println_message</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+            </Action>
+            <Action id="L}2781">
+                <Form>Call</Form>
+                <Target>RL.watch.all</Target>
+                <ResolvedTarget>`B}function.watchAll`</ResolvedTarget>
+            </Action>
+            <Action id="L}2783">
+                <Form>Assign New</Form>
+                <Target>List</Target>
+                <ResolvedTarget>`J}java.util.List`</ResolvedTarget>
+                <Expression id="L}2784">
+                    <Value>DetermineShippingCosts(createOrderTestData(), createShipRateData())</Value>
+                    <ResolvedValue>`G}-7745b19e:1295bd80fce:-7c2b`(`G}-7745b19e:1295bd80fce:-7c26`(), `G}-7745b19e:1295bd80fce:-7c1b`())</ResolvedValue>
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <Variable>resultList</Variable>
+            </Action>
+            <Action id="L}3020">
+                <Form>Return</Form>
+                <Expression id="L}3021">
+                    <Value>true</Value>
+                    <ResolvedValue>true</ResolvedValue>
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+            </Action>
+            <ValidationUpdateNumber>1404</ValidationUpdateNumber>
+        </Function>
+        <Function id="G}-7745b19e:1295bd80fce:-7c26">
+            <Name>createOrderTestData</Name>
+            <Alias>createOrderTestData</Alias>
+            <Visible>true</Visible>
+            <CreationUpdateNumber>1164</CreationUpdateNumber>
+            <IDofType>J}example.rules.OrderT</IDofType>
+            <ListContentID>B}nil</ListContentID>
+            <Type>OrderT</Type>
+            <IDofBucketSet>B}nil</IDofBucketSet>
+            <Form>Structured</Form>
+            <Action id="L}2815">
+                <Form>Assign New</Form>
+                <Target>ItemT</Target>
+                <ResolvedTarget>`J}example.rules.ItemT`</ResolvedTarget>
+                <Expression id="L}2816">
+                    <Value>new ItemT()</Value>
+                    <ResolvedValue>new `J}public example.rules.ItemT()`()</ResolvedValue>
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <Variable>line1</Variable>
+            </Action>
+            <Action id="L}2817">
+                <Form>Modify</Form>
+                <Target>line1</Target>
+                <ResolvedTarget>`L}2815`</ResolvedTarget>
+                <Expression id="L}2818">
+                    <Value>&quot;001&quot;</Value>
+                    <ResolvedValue>&quot;001&quot;</ResolvedValue>
+                    <IsConstant>true</IsConstant>
+                    <ParameterAlias>productId</ParameterAlias>
+                    <ParameterID>J}example.rules.ItemT.{productId}</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <Expression id="L}2819">
+                    <Value>3</Value>
+                    <ResolvedValue>3</ResolvedValue>
+                    <IsConstant>true</IsConstant>
+                    <ParameterAlias>quantity</ParameterAlias>
+                    <ParameterID>J}example.rules.ItemT.{quantity}</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <Expression id="L}2820">
+                    <Value>5.99</Value>
+                    <ResolvedValue>5.99</ResolvedValue>
+                    <IsConstant>false</IsConstant>
+                    <ParameterAlias>unitPrice</ParameterAlias>
+                    <ParameterID>J}example.rules.ItemT.{unitPrice}</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <Expression id="L}3015">
+                    <IsConstant>false</IsConstant>
+                    <ParameterAlias>extraCharge</ParameterAlias>
+                    <ParameterID>J}example.rules.ItemT.{extraCharge}</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+            </Action>
+            <Action id="L}2807">
+                <Form>Assign New</Form>
+                <Target>ItemT</Target>
+                <ResolvedTarget>`J}example.rules.ItemT`</ResolvedTarget>
+                <Expression id="L}2808">
+                    <Value>new ItemT()</Value>
+                    <ResolvedValue>new `J}public example.rules.ItemT()`()</ResolvedValue>
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <Variable>line2</Variable>
+            </Action>
+            <Action id="L}2812">
+                <Form>Modify</Form>
+                <Target>line2</Target>
+                <ResolvedTarget>`L}2807`</ResolvedTarget>
+                <Expression id="L}2821">
+                    <Value>&quot;123&quot;</Value>
+                    <ResolvedValue>&quot;123&quot;</ResolvedValue>
+                    <IsConstant>true</IsConstant>
+                    <ParameterAlias>productId</ParameterAlias>
+                    <ParameterID>J}example.rules.ItemT.{productId}</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <Expression id="L}2822">
+                    <Value>1</Value>
+                    <ResolvedValue>1</ResolvedValue>
+                    <IsConstant>true</IsConstant>
+                    <ParameterAlias>quantity</ParameterAlias>
+                    <ParameterID>J}example.rules.ItemT.{quantity}</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <Expression id="L}2823">
+                    <Value>34.99</Value>
+                    <ResolvedValue>34.99</ResolvedValue>
+                    <IsConstant>true</IsConstant>
+                    <ParameterAlias>unitPrice</ParameterAlias>
+                    <ParameterID>J}example.rules.ItemT.{unitPrice}</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <Expression id="L}3016">
+                    <IsConstant>false</IsConstant>
+                    <ParameterAlias>extraCharge</ParameterAlias>
+                    <ParameterID>J}example.rules.ItemT.{extraCharge}</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+            </Action>
+            <Action id="L}2824">
+                <Form>Assign New</Form>
+                <Target>OrderItemCollection</Target>
+                <ResolvedTarget>`J}example.rules.OrderItemCollection`</ResolvedTarget>
+                <Expression id="L}2825">
+                    <Value>new OrderItemCollection()</Value>
+                    <ResolvedValue>new `J}public example.rules.OrderItemCollection()`()</ResolvedValue>
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <Variable>items</Variable>
+            </Action>
+            <Action id="L}2907">
+                <Form>Expression</Form>
+                <Expression id="L}2908">
+                    <Value>items.getItem().add(0,line1)</Value>
+                    <ResolvedValue>`L}2824`.`J}public java.util.List example.rules.OrderItemCollection.getItem()`().`J}public abstract void java.util.List.add(int,java.lang.Object)`(0,`L}2815`)</ResolvedValue>
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+            </Action>
+            <Action id="L}2911">
+                <Form>Expression</Form>
+                <Expression id="L}2912">
+                    <Value>items.getItem().add(1,line2)</Value>
+                    <ResolvedValue>`L}2824`.`J}public java.util.List example.rules.OrderItemCollection.getItem()`().`J}public abstract void java.util.List.add(int,java.lang.Object)`(1,`L}2807`)</ResolvedValue>
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+            </Action>
+            <Action id="L}2926">
+                <Form>Assign New</Form>
+                <Target>OrderT</Target>
+                <ResolvedTarget>`J}example.rules.OrderT`</ResolvedTarget>
+                <Expression id="L}2927">
+                    <Value>new OrderT()</Value>
+                    <ResolvedValue>new `J}public example.rules.OrderT()`()</ResolvedValue>
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <Variable>order</Variable>
+            </Action>
+            <Action id="L}2928">
+                <Form>Modify</Form>
+                <Target>order</Target>
+                <ResolvedTarget>`L}2926`</ResolvedTarget>
+                <Expression id="L}2929">
+                    <Value>&quot;352789&quot;</Value>
+                    <ResolvedValue>&quot;352789&quot;</ResolvedValue>
+                    <IsConstant>true</IsConstant>
+                    <ParameterAlias>orderId</ParameterAlias>
+                    <ParameterID>J}example.rules.OrderT.{orderId}</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <Expression id="L}2930">
+                    <Value>items</Value>
+                    <ResolvedValue>`L}2824`</ResolvedValue>
+                    <IsConstant>false</IsConstant>
+                    <ParameterAlias>items</ParameterAlias>
+                    <ParameterID>J}example.rules.OrderT.{items}</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+            </Action>
+            <Action id="L}2931">
+                <Form>Return</Form>
+                <Expression id="L}2932">
+                    <Value>order</Value>
+                    <ResolvedValue>`L}2926`</ResolvedValue>
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+            </Action>
+            <ValidationUpdateNumber>1404</ValidationUpdateNumber>
+        </Function>
+        <Function id="G}-7745b19e:1295bd80fce:-7c1b">
+            <Name>createShipRateData</Name>
+            <Alias>createShipRateData</Alias>
+            <Visible>true</Visible>
+            <CreationUpdateNumber>1269</CreationUpdateNumber>
+            <IDofType>J}java.util.List</IDofType>
+            <ListContentID>B}nil</ListContentID>
+            <Type>List</Type>
+            <IDofBucketSet>B}nil</IDofBucketSet>
+            <Form>Structured</Form>
+            <Action id="L}2933">
+                <Form>Assign New</Form>
+                <Target>ShipCode</Target>
+                <ResolvedTarget>`J}rulesproject.ShipCode`</ResolvedTarget>
+                <Expression id="L}2934">
+                    <Value>new ShipCode()</Value>
+                    <ResolvedValue>new `J}public rulesproject.ShipCode()`()</ResolvedValue>
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <Variable>row1</Variable>
+            </Action>
+            <Action id="L}2935">
+                <Form>Modify</Form>
+                <Target>row1</Target>
+                <ResolvedTarget>`L}2933`</ResolvedTarget>
+                <Expression id="L}2936">
+                    <Value>&quot;001&quot;</Value>
+                    <ResolvedValue>&quot;001&quot;</ResolvedValue>
+                    <IsConstant>true</IsConstant>
+                    <ParameterAlias>productId</ParameterAlias>
+                    <ParameterID>J}rulesproject.ShipCode.{productId}</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <Expression id="L}2937">
+                    <Value>&quot;C&quot;</Value>
+                    <ResolvedValue>&quot;C&quot;</ResolvedValue>
+                    <IsConstant>true</IsConstant>
+                    <ParameterAlias>shipCode</ParameterAlias>
+                    <ParameterID>J}rulesproject.ShipCode.{shipCode}</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+            </Action>
+            <Action id="L}2938">
+                <Form>Assign New</Form>
+                <Target>ShipCode</Target>
+                <ResolvedTarget>`J}rulesproject.ShipCode`</ResolvedTarget>
+                <Expression id="L}2939">
+                    <Value>new ShipCode()</Value>
+                    <ResolvedValue>new `J}public rulesproject.ShipCode()`()</ResolvedValue>
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <Variable>row2</Variable>
+            </Action>
+            <Action id="L}2940">
+                <Form>Modify</Form>
+                <Target>row2</Target>
+                <ResolvedTarget>`L}2938`</ResolvedTarget>
+                <Expression id="L}2941">
+                    <Value>&quot;002&quot;</Value>
+                    <ResolvedValue>&quot;002&quot;</ResolvedValue>
+                    <IsConstant>true</IsConstant>
+                    <ParameterAlias>productId</ParameterAlias>
+                    <ParameterID>J}rulesproject.ShipCode.{productId}</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <Expression id="L}2942">
+                    <Value>&quot;A&quot;</Value>
+                    <ResolvedValue>&quot;A&quot;</ResolvedValue>
+                    <IsConstant>false</IsConstant>
+                    <ParameterAlias>shipCode</ParameterAlias>
+                    <ParameterID>J}rulesproject.ShipCode.{shipCode}</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+            </Action>
+            <Action id="L}2945">
+                <Form>Assign New</Form>
+                <Target>ShipCodeList</Target>
+                <ResolvedTarget>`J}rulesproject.ShipCodeList`</ResolvedTarget>
+                <Expression id="L}2960">
+                    <Value>new ShipCodeList()</Value>
+                    <ResolvedValue>new `J}public rulesproject.ShipCodeList()`()</ResolvedValue>
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <Variable>shippingList</Variable>
+            </Action>
+            <Action id="L}2950">
+                <Form>Expression</Form>
+                <Expression id="L}2961">
+                    <Value>shippingList.getShipList().add(0,row1)</Value>
+                    <ResolvedValue>`L}2945`.`J}public java.util.List rulesproject.ShipCodeList.getShipList()`().`J}public abstract void java.util.List.add(int,java.lang.Object)`(0,`L}2933`)</ResolvedValue>
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+            </Action>
+            <Action id="L}2973">
+                <Form>Return</Form>
+                <Expression id="L}2974">
+                    <Value>shippingList.shipList</Value>
+                    <ResolvedValue>`L}2945`.`J}rulesproject.ShipCodeList.{shipList}`</ResolvedValue>
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+            </Action>
+            <ValidationUpdateNumber>1404</ValidationUpdateNumber>
+        </Function>
+        <JaxbFactType id="J}example.rules.ObjectFactory">
+            <Name>example.rules.ObjectFactory</Name>
+            <Alias>ObjectFactory</Alias>
+            <Visible>false</Visible>
+            <CreationUpdateNumber>1069</CreationUpdateNumber>
+            <Method id="J}public example.rules.OrderT example.rules.ObjectFactory.createOrderT()">
+                <Name>createOrderT</Name>
+                <Alias>createOrderT</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1069</CreationUpdateNumber>
+                <Modifiers id="L}2737">
+                    <CreationUpdateNumber>1069</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}example.rules.OrderT</IDofType>
+                <Type>OrderT</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Method id="J}public example.rules.ItemT example.rules.ObjectFactory.createItemT()">
+                <Name>createItemT</Name>
+                <Alias>createItemT</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1069</CreationUpdateNumber>
+                <Modifiers id="L}2741">
+                    <CreationUpdateNumber>1069</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}example.rules.ItemT</IDofType>
+                <Type>ItemT</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Method id="J}public javax.xml.bind.JAXBElement example.rules.ObjectFactory.createOrder(example.rules.OrderT)">
+                <Name>createOrder</Name>
+                <Alias>createOrder</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1069</CreationUpdateNumber>
+                <OverloadedParameter id="G}-7745b19e:1295bd80fce:-7c2f">
+                    <CreationUpdateNumber>1069</CreationUpdateNumber>
+                    <IDsOfType>J}example.rules.OrderT</IDsOfType>
+                </OverloadedParameter>
+                <Modifiers id="L}2743">
+                    <CreationUpdateNumber>1069</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}javax.xml.bind.JAXBElement</IDofType>
+                <Type>JAXBElement</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Method id="J}public example.rules.OrderItemCollection example.rules.ObjectFactory.createOrderItemCollection()">
+                <Name>createOrderItemCollection</Name>
+                <Alias>createOrderItemCollection</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1226</CreationUpdateNumber>
+                <Modifiers id="L}2828">
+                    <CreationUpdateNumber>1226</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}example.rules.OrderItemCollection</IDofType>
+                <Type>OrderItemCollection</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Method id="J}public javax.xml.bind.JAXBElement example.rules.ObjectFactory.createItem(example.rules.ItemT)">
+                <Name>createItem</Name>
+                <Alias>createItem</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1368</CreationUpdateNumber>
+                <OverloadedParameter id="G}-7745b19e:1295bd80fce:-7c18">
+                    <CreationUpdateNumber>1368</CreationUpdateNumber>
+                    <IDsOfType>J}example.rules.ItemT</IDsOfType>
+                </OverloadedParameter>
+                <Modifiers id="L}2978">
+                    <CreationUpdateNumber>1368</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}javax.xml.bind.JAXBElement</IDofType>
+                <Type>JAXBElement</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Constructor id="J}public example.rules.ObjectFactory()">
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1069</CreationUpdateNumber>
+                <Modifiers id="L}2735">
+                    <CreationUpdateNumber>1069</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+            </Constructor>
+            <IDofSuperClass>J}java.lang.Object</IDofSuperClass>
+            <ValidationUpdateNumber>1406</ValidationUpdateNumber>
+            <Source>xsd/Order.xsd</Source>
+            <IsArray>false</IsArray>
+            <IDofArrayComponentType>B}nil</IDofArrayComponentType>
+            <SupportXPath>false</SupportXPath>
+            <IsInterface>false</IsInterface>
+            <Modifiers id="L}3029">
+                <CreationUpdateNumber>1406</CreationUpdateNumber>
+                <Access>1</Access>
+                <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
+                <isAbstract>false</isAbstract>
+            </Modifiers>
+            <EnumBucketSetID>B}nil</EnumBucketSetID>
+            <Timestamp>0</Timestamp>
+            <ENUM>false</ENUM>
+            <JAXB2.0>true</JAXB2.0>
+            <TargetPackage>example.rules</TargetPackage>
+        </JaxbFactType>
+        <JavaFactType id="J}rulesproject.ShipCode">
+            <Name>rulesproject.ShipCode</Name>
+            <Alias>ShipCode</Alias>
+            <Visible>true</Visible>
+            <CreationUpdateNumber>1070</CreationUpdateNumber>
+            <Property id="J}rulesproject.ShipCode.{productId}">
+                <Name>productId</Name>
+                <Alias>productId</Alias>
+                <Visible>true</Visible>
+                <CreationUpdateNumber>1070</CreationUpdateNumber>
+                <IDofType>J}java.lang.String</IDofType>
+                <ListContentID>B}nil</ListContentID>
+                <Type>String</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+                <Writable>true</Writable>
+                <Readable>true</Readable>
+                <Local>true</Local>
+                <Expression id="L}2758">
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <PrimaryKey>false</PrimaryKey>
+            </Property>
+            <Property id="J}rulesproject.ShipCode.{shipCode}">
+                <Name>shipCode</Name>
+                <Alias>shipCode</Alias>
+                <Visible>true</Visible>
+                <CreationUpdateNumber>1070</CreationUpdateNumber>
+                <IDofType>J}java.lang.String</IDofType>
+                <ListContentID>B}nil</ListContentID>
+                <Type>String</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+                <Writable>true</Writable>
+                <Readable>true</Readable>
+                <Local>true</Local>
+                <Expression id="L}2759">
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <PrimaryKey>false</PrimaryKey>
+            </Property>
+            <Method id="J}public void rulesproject.ShipCode.setProductId(java.lang.String)">
+                <Name>setProductId</Name>
+                <Alias>setProductId</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1070</CreationUpdateNumber>
+                <OverloadedParameter id="G}-7745b19e:1295bd80fce:-7c2d">
+                    <CreationUpdateNumber>1070</CreationUpdateNumber>
+                    <IDsOfType>J}java.lang.String</IDsOfType>
+                </OverloadedParameter>
+                <Modifiers id="L}2751">
+                    <CreationUpdateNumber>1070</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}void</IDofType>
+                <Type>void</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Method id="J}public java.lang.String rulesproject.ShipCode.getProductId()">
+                <Name>getProductId</Name>
+                <Alias>getProductId</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1070</CreationUpdateNumber>
+                <Modifiers id="L}2753">
+                    <CreationUpdateNumber>1070</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}java.lang.String</IDofType>
+                <Type>String</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Method id="J}public java.lang.String rulesproject.ShipCode.getShipCode()">
+                <Name>getShipCode</Name>
+                <Alias>getShipCode</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1070</CreationUpdateNumber>
+                <Modifiers id="L}2755">
+                    <CreationUpdateNumber>1070</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}java.lang.String</IDofType>
+                <Type>String</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Method id="J}public void rulesproject.ShipCode.setShipCode(java.lang.String)">
+                <Name>setShipCode</Name>
+                <Alias>setShipCode</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1070</CreationUpdateNumber>
+                <OverloadedParameter id="G}-7745b19e:1295bd80fce:-7c2c">
+                    <CreationUpdateNumber>1070</CreationUpdateNumber>
+                    <IDsOfType>J}java.lang.String</IDsOfType>
+                </OverloadedParameter>
+                <Modifiers id="L}2757">
+                    <CreationUpdateNumber>1070</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}void</IDofType>
+                <Type>void</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Constructor id="J}public rulesproject.ShipCode()">
+                <Visible>true</Visible>
+                <CreationUpdateNumber>1070</CreationUpdateNumber>
+                <Modifiers id="L}2749">
+                    <CreationUpdateNumber>1070</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+            </Constructor>
+            <IDofSuperClass>J}java.lang.Object</IDofSuperClass>
+            <ValidationUpdateNumber>1070</ValidationUpdateNumber>
+            <Source>file:///C:/projects/BobsRulesApp/SCA-INF/classes/</Source>
+            <IsArray>false</IsArray>
+            <IDofArrayComponentType>B}nil</IDofArrayComponentType>
+            <SupportXPath>false</SupportXPath>
+            <IsInterface>false</IsInterface>
+            <Modifiers id="L}2747">
+                <CreationUpdateNumber>1070</CreationUpdateNumber>
+                <Access>1</Access>
+                <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
+                <isAbstract>false</isAbstract>
+            </Modifiers>
+            <EnumBucketSetID>B}nil</EnumBucketSetID>
+            <Timestamp>1277147941453</Timestamp>
+            <ENUM>false</ENUM>
+        </JavaFactType>
+        <JaxbFactType id="J}example.rules.ItemT">
+            <Name>example.rules.ItemT</Name>
+            <Alias>ItemT</Alias>
+            <Visible>true</Visible>
+            <CreationUpdateNumber>1227</CreationUpdateNumber>
+            <Property id="J}example.rules.ItemT.{productId}">
+                <Name>productId</Name>
+                <Alias>productId</Alias>
+                <Visible>true</Visible>
+                <CreationUpdateNumber>1227</CreationUpdateNumber>
+                <IDofType>J}java.lang.String</IDofType>
+                <ListContentID>B}nil</ListContentID>
+                <Type>String</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+                <Writable>true</Writable>
+                <Readable>true</Readable>
+                <Local>true</Local>
+                <Expression id="L}2845">
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <PrimaryKey>false</PrimaryKey>
+            </Property>
+            <Property id="J}example.rules.ItemT.{quantity}">
+                <Name>quantity</Name>
+                <Alias>quantity</Alias>
+                <Visible>true</Visible>
+                <CreationUpdateNumber>1227</CreationUpdateNumber>
+                <IDofType>J}java.math.BigInteger</IDofType>
+                <ListContentID>B}nil</ListContentID>
+                <Type>BigInteger</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+                <Writable>true</Writable>
+                <Readable>true</Readable>
+                <Local>true</Local>
+                <Expression id="L}2846">
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <PrimaryKey>false</PrimaryKey>
+            </Property>
+            <Property id="J}example.rules.ItemT.{unitPrice}">
+                <Name>unitPrice</Name>
+                <Alias>unitPrice</Alias>
+                <Visible>true</Visible>
+                <CreationUpdateNumber>1252</CreationUpdateNumber>
+                <IDofType>J}java.math.BigDecimal</IDofType>
+                <ListContentID>B}nil</ListContentID>
+                <Type>BigDecimal</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+                <Writable>true</Writable>
+                <Readable>true</Readable>
+                <Local>true</Local>
+                <Expression id="L}2919">
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <PrimaryKey>false</PrimaryKey>
+            </Property>
+            <Property id="J}example.rules.ItemT.{extraCharge}">
+                <Name>extraCharge</Name>
+                <Alias>extraCharge</Alias>
+                <Visible>true</Visible>
+                <CreationUpdateNumber>1375</CreationUpdateNumber>
+                <IDofType>J}boolean</IDofType>
+                <ListContentID>B}nil</ListContentID>
+                <Type>boolean</Type>
+                <IDofBucketSet>B}bbs</IDofBucketSet>
+                <BucketSet>boolean</BucketSet>
+                <Writable>true</Writable>
+                <Readable>true</Readable>
+                <Local>true</Local>
+                <Expression id="L}3008">
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <PrimaryKey>false</PrimaryKey>
+            </Property>
+            <Method id="J}public void example.rules.ItemT.setProductId(java.lang.String)">
+                <Name>setProductId</Name>
+                <Alias>setProductId</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1227</CreationUpdateNumber>
+                <OverloadedParameter id="G}-7745b19e:1295bd80fce:-7c25">
+                    <CreationUpdateNumber>1227</CreationUpdateNumber>
+                    <IDsOfType>J}java.lang.String</IDsOfType>
+                </OverloadedParameter>
+                <Modifiers id="L}2834">
+                    <CreationUpdateNumber>1227</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}void</IDofType>
+                <Type>void</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Method id="J}public java.lang.String example.rules.ItemT.getProductId()">
+                <Name>getProductId</Name>
+                <Alias>getProductId</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1227</CreationUpdateNumber>
+                <Modifiers id="L}2836">
+                    <CreationUpdateNumber>1227</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}java.lang.String</IDofType>
+                <Type>String</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Method id="J}public java.math.BigInteger example.rules.ItemT.getQuantity()">
+                <Name>getQuantity</Name>
+                <Alias>getQuantity</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1227</CreationUpdateNumber>
+                <Modifiers id="L}2838">
+                    <CreationUpdateNumber>1227</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}java.math.BigInteger</IDofType>
+                <Type>BigInteger</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Method id="J}public void example.rules.ItemT.setQuantity(java.math.BigInteger)">
+                <Name>setQuantity</Name>
+                <Alias>setQuantity</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1227</CreationUpdateNumber>
+                <OverloadedParameter id="G}-7745b19e:1295bd80fce:-7c24">
+                    <CreationUpdateNumber>1227</CreationUpdateNumber>
+                    <IDsOfType>J}java.math.BigInteger</IDsOfType>
+                </OverloadedParameter>
+                <Modifiers id="L}2840">
+                    <CreationUpdateNumber>1227</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}void</IDofType>
+                <Type>void</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Method id="J}public java.math.BigDecimal example.rules.ItemT.getUnitPrice()">
+                <Name>getUnitPrice</Name>
+                <Alias>getUnitPrice</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1252</CreationUpdateNumber>
+                <Modifiers id="L}2916">
+                    <CreationUpdateNumber>1252</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}java.math.BigDecimal</IDofType>
+                <Type>BigDecimal</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Method id="J}public void example.rules.ItemT.setUnitPrice(java.math.BigDecimal)">
+                <Name>setUnitPrice</Name>
+                <Alias>setUnitPrice</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1252</CreationUpdateNumber>
+                <OverloadedParameter id="G}-7745b19e:1295bd80fce:-7c1c">
+                    <CreationUpdateNumber>1252</CreationUpdateNumber>
+                    <IDsOfType>J}java.math.BigDecimal</IDsOfType>
+                </OverloadedParameter>
+                <Modifiers id="L}2918">
+                    <CreationUpdateNumber>1252</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}void</IDofType>
+                <Type>void</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Method id="J}public boolean example.rules.ItemT.isExtraCharge()">
+                <Name>isExtraCharge</Name>
+                <Alias>isExtraCharge</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1375</CreationUpdateNumber>
+                <Modifiers id="L}3005">
+                    <CreationUpdateNumber>1375</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}boolean</IDofType>
+                <Type>boolean</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Method id="J}public void example.rules.ItemT.setExtraCharge(boolean)">
+                <Name>setExtraCharge</Name>
+                <Alias>setExtraCharge</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1375</CreationUpdateNumber>
+                <OverloadedParameter id="G}-7745b19e:1295bd80fce:-7c17">
+                    <CreationUpdateNumber>1375</CreationUpdateNumber>
+                    <IDsOfType>J}boolean</IDsOfType>
+                </OverloadedParameter>
+                <Modifiers id="L}3007">
+                    <CreationUpdateNumber>1375</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}void</IDofType>
+                <Type>void</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Constructor id="J}public example.rules.ItemT()">
+                <Visible>true</Visible>
+                <CreationUpdateNumber>1227</CreationUpdateNumber>
+                <Modifiers id="L}2832">
+                    <CreationUpdateNumber>1227</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+            </Constructor>
+            <IDofSuperClass>J}java.lang.Object</IDofSuperClass>
+            <ValidationUpdateNumber>1406</ValidationUpdateNumber>
+            <Source>xsd/Order.xsd</Source>
+            <IsArray>false</IsArray>
+            <IDofArrayComponentType>B}nil</IDofArrayComponentType>
+            <SupportXPath>false</SupportXPath>
+            <IsInterface>false</IsInterface>
+            <Modifiers id="L}3034">
+                <CreationUpdateNumber>1406</CreationUpdateNumber>
+                <Access>1</Access>
+                <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
+                <isAbstract>false</isAbstract>
+            </Modifiers>
+            <EnumBucketSetID>B}nil</EnumBucketSetID>
+            <Timestamp>0</Timestamp>
+            <ENUM>false</ENUM>
+            <XmlName>//xs:complexType[@name=&apos;ItemT&apos;]</XmlName>
+            <JAXB2.0>true</JAXB2.0>
+            <NodeName>ItemT</NodeName>
+            <Namespace>http://www.rules.example</Namespace>
+            <TargetPackage>example.rules</TargetPackage>
+        </JaxbFactType>
+        <JaxbFactType id="J}example.rules.OrderItemCollection">
+            <Name>example.rules.OrderItemCollection</Name>
+            <Alias>OrderItemCollection</Alias>
+            <Visible>true</Visible>
+            <CreationUpdateNumber>1227</CreationUpdateNumber>
+            <Property id="J}example.rules.OrderItemCollection.{item}">
+                <Name>item</Name>
+                <Alias>item</Alias>
+                <Visible>true</Visible>
+                <CreationUpdateNumber>1227</CreationUpdateNumber>
+                <IDofType>J}java.util.List</IDofType>
+                <ListContentID>J}example.rules.ItemT</ListContentID>
+                <Type>List</Type>
+                <ListContentType>ItemT</ListContentType>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+                <Writable>true</Writable>
+                <Readable>true</Readable>
+                <Local>true</Local>
+                <Expression id="L}2870">
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <PrimaryKey>false</PrimaryKey>
+            </Property>
+            <Method id="J}public java.util.List example.rules.OrderItemCollection.getItem()">
+                <Name>getItem</Name>
+                <Alias>getItem</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1227</CreationUpdateNumber>
+                <Modifiers id="L}2867">
+                    <CreationUpdateNumber>1227</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}java.util.List</IDofType>
+                <Type>List</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Method id="J}public void example.rules.OrderItemCollection.setItem(java.util.List)">
+                <Name>setItem</Name>
+                <Alias>setItem</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1227</CreationUpdateNumber>
+                <OverloadedParameter id="G}-7745b19e:1295bd80fce:-7c20">
+                    <CreationUpdateNumber>1227</CreationUpdateNumber>
+                    <IDsOfType>J}java.util.List</IDsOfType>
+                </OverloadedParameter>
+                <Modifiers id="L}2869">
+                    <CreationUpdateNumber>1227</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}void</IDofType>
+                <Type>void</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Constructor id="J}public example.rules.OrderItemCollection()">
+                <Visible>true</Visible>
+                <CreationUpdateNumber>1227</CreationUpdateNumber>
+                <Modifiers id="L}2865">
+                    <CreationUpdateNumber>1227</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+            </Constructor>
+            <IDofSuperClass>J}java.lang.Object</IDofSuperClass>
+            <ValidationUpdateNumber>1406</ValidationUpdateNumber>
+            <Source>xsd/Order.xsd</Source>
+            <IsArray>false</IsArray>
+            <IDofArrayComponentType>B}nil</IDofArrayComponentType>
+            <SupportXPath>false</SupportXPath>
+            <IsInterface>false</IsInterface>
+            <Modifiers id="L}3035">
+                <CreationUpdateNumber>1406</CreationUpdateNumber>
+                <Access>1</Access>
+                <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
+                <isAbstract>false</isAbstract>
+            </Modifiers>
+            <EnumBucketSetID>B}nil</EnumBucketSetID>
+            <Timestamp>0</Timestamp>
+            <ENUM>false</ENUM>
+            <XmlName>//xs:complexType[@name=&apos;OrderItemCollection&apos;]</XmlName>
+            <JAXB2.0>true</JAXB2.0>
+            <NodeName>OrderItemCollection</NodeName>
+            <Namespace>http://www.rules.example</Namespace>
+            <TargetPackage>example.rules</TargetPackage>
+        </JaxbFactType>
+        <JaxbFactType id="J}example.rules.OrderT">
+            <Name>example.rules.OrderT</Name>
+            <Alias>OrderT</Alias>
+            <Visible>true</Visible>
+            <CreationUpdateNumber>1227</CreationUpdateNumber>
+            <Property id="J}example.rules.OrderT.{orderId}">
+                <Name>orderId</Name>
+                <Alias>orderId</Alias>
+                <Visible>true</Visible>
+                <CreationUpdateNumber>1227</CreationUpdateNumber>
+                <IDofType>J}java.lang.String</IDofType>
+                <ListContentID>B}nil</ListContentID>
+                <Type>String</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+                <Writable>true</Writable>
+                <Readable>true</Readable>
+                <Local>true</Local>
+                <Expression id="L}2885">
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <PrimaryKey>false</PrimaryKey>
+            </Property>
+            <Property id="J}example.rules.OrderT.{items}">
+                <Name>items</Name>
+                <Alias>items</Alias>
+                <Visible>true</Visible>
+                <CreationUpdateNumber>1236</CreationUpdateNumber>
+                <IDofType>J}example.rules.OrderItemCollection</IDofType>
+                <ListContentID>B}nil</ListContentID>
+                <Type>OrderItemCollection</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+                <Writable>true</Writable>
+                <Readable>true</Readable>
+                <Local>true</Local>
+                <Expression id="L}2904">
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <PrimaryKey>false</PrimaryKey>
+            </Property>
+            <Method id="J}public java.lang.String example.rules.OrderT.getOrderId()">
+                <Name>getOrderId</Name>
+                <Alias>getOrderId</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1227</CreationUpdateNumber>
+                <Modifiers id="L}2881">
+                    <CreationUpdateNumber>1227</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}java.lang.String</IDofType>
+                <Type>String</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Method id="J}public void example.rules.OrderT.setOrderId(java.lang.String)">
+                <Name>setOrderId</Name>
+                <Alias>setOrderId</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1227</CreationUpdateNumber>
+                <OverloadedParameter id="G}-7745b19e:1295bd80fce:-7c1e">
+                    <CreationUpdateNumber>1227</CreationUpdateNumber>
+                    <IDsOfType>J}java.lang.String</IDsOfType>
+                </OverloadedParameter>
+                <Modifiers id="L}2883">
+                    <CreationUpdateNumber>1227</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}void</IDofType>
+                <Type>void</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Method id="J}public example.rules.OrderItemCollection example.rules.OrderT.getItems()">
+                <Name>getItems</Name>
+                <Alias>getItems</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1236</CreationUpdateNumber>
+                <Modifiers id="L}2901">
+                    <CreationUpdateNumber>1236</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}example.rules.OrderItemCollection</IDofType>
+                <Type>OrderItemCollection</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Method id="J}public void example.rules.OrderT.setItems(example.rules.OrderItemCollection)">
+                <Name>setItems</Name>
+                <Alias>setItems</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1236</CreationUpdateNumber>
+                <OverloadedParameter id="G}-7745b19e:1295bd80fce:-7c1d">
+                    <CreationUpdateNumber>1236</CreationUpdateNumber>
+                    <IDsOfType>J}example.rules.OrderItemCollection</IDsOfType>
+                </OverloadedParameter>
+                <Modifiers id="L}2903">
+                    <CreationUpdateNumber>1236</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}void</IDofType>
+                <Type>void</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Constructor id="J}public example.rules.OrderT()">
+                <Visible>true</Visible>
+                <CreationUpdateNumber>1227</CreationUpdateNumber>
+                <Modifiers id="L}2875">
+                    <CreationUpdateNumber>1227</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+            </Constructor>
+            <IDofSuperClass>J}java.lang.Object</IDofSuperClass>
+            <ValidationUpdateNumber>1406</ValidationUpdateNumber>
+            <Source>xsd/Order.xsd</Source>
+            <IsArray>false</IsArray>
+            <IDofArrayComponentType>B}nil</IDofArrayComponentType>
+            <SupportXPath>false</SupportXPath>
+            <IsInterface>false</IsInterface>
+            <Modifiers id="L}3033">
+                <CreationUpdateNumber>1406</CreationUpdateNumber>
+                <Access>1</Access>
+                <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
+                <isAbstract>false</isAbstract>
+            </Modifiers>
+            <EnumBucketSetID>B}nil</EnumBucketSetID>
+            <Timestamp>0</Timestamp>
+            <ENUM>false</ENUM>
+            <XmlName>//xs:complexType[@name=&apos;OrderT&apos;]</XmlName>
+            <JAXB2.0>true</JAXB2.0>
+            <NodeName>OrderT</NodeName>
+            <Namespace>http://www.rules.example</Namespace>
+            <TargetPackage>example.rules</TargetPackage>
+        </JaxbFactType>
+        <JavaFactType id="J}rulesproject.ShipCodeList">
+            <Name>rulesproject.ShipCodeList</Name>
+            <Alias>ShipCodeList</Alias>
+            <Visible>true</Visible>
+            <CreationUpdateNumber>1353</CreationUpdateNumber>
+            <Property id="J}rulesproject.ShipCodeList.{shipList}">
+                <Name>shipList</Name>
+                <Alias>shipList</Alias>
+                <Visible>true</Visible>
+                <CreationUpdateNumber>1353</CreationUpdateNumber>
+                <IDofType>J}java.util.List</IDofType>
+                <ListContentID>J}rulesproject.ShipCode</ListContentID>
+                <Type>List</Type>
+                <ListContentType>ShipCode</ListContentType>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+                <Writable>true</Writable>
+                <Readable>true</Readable>
+                <Local>true</Local>
+                <Expression id="L}2972">
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <PrimaryKey>false</PrimaryKey>
+            </Property>
+            <Method id="J}public void rulesproject.ShipCodeList.setShipList(java.util.List)">
+                <Name>setShipList</Name>
+                <Alias>setShipList</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1353</CreationUpdateNumber>
+                <OverloadedParameter id="G}-7745b19e:1295bd80fce:-7c19">
+                    <CreationUpdateNumber>1353</CreationUpdateNumber>
+                    <IDsOfType>J}java.util.List</IDsOfType>
+                </OverloadedParameter>
+                <Modifiers id="L}2969">
+                    <CreationUpdateNumber>1353</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}void</IDofType>
+                <Type>void</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Method id="J}public java.util.List rulesproject.ShipCodeList.getShipList()">
+                <Name>getShipList</Name>
+                <Alias>getShipList</Alias>
+                <Visible>false</Visible>
+                <CreationUpdateNumber>1353</CreationUpdateNumber>
+                <Modifiers id="L}2971">
+                    <CreationUpdateNumber>1353</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+                <Static>false</Static>
+                <IDofType>J}java.util.List</IDofType>
+                <Type>List</Type>
+                <IDofBucketSet>B}nil</IDofBucketSet>
+            </Method>
+            <Constructor id="J}public rulesproject.ShipCodeList()">
+                <Visible>true</Visible>
+                <CreationUpdateNumber>1353</CreationUpdateNumber>
+                <Modifiers id="L}2967">
+                    <CreationUpdateNumber>1353</CreationUpdateNumber>
+                    <Access>1</Access>
+                    <isStatic>false</isStatic>
+                    <isFinal>false</isFinal>
+                    <isAbstract>false</isAbstract>
+                </Modifiers>
+            </Constructor>
+            <IDofSuperClass>J}java.lang.Object</IDofSuperClass>
+            <ValidationUpdateNumber>1353</ValidationUpdateNumber>
+            <Source>file:///C:/projects/BobsRulesApp/SCA-INF/classes/</Source>
+            <IsArray>false</IsArray>
+            <IDofArrayComponentType>B}nil</IDofArrayComponentType>
+            <SupportXPath>false</SupportXPath>
+            <IsInterface>false</IsInterface>
+            <Modifiers id="L}2965">
+                <CreationUpdateNumber>1353</CreationUpdateNumber>
+                <Access>1</Access>
+                <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
+                <isAbstract>false</isAbstract>
+            </Modifiers>
+            <EnumBucketSetID>B}nil</EnumBucketSetID>
+            <Timestamp>1277153050734</Timestamp>
+            <ENUM>false</ENUM>
+        </JavaFactType>
+        <SupportsXPathEnabled>false</SupportsXPathEnabled>
+        <DecisionFunction id="G}-7745b19e:1295bd80fce:-7c2b">
+            <Name>DetermineShippingCosts</Name>
+            <Alias>DetermineShippingCosts</Alias>
+            <Visible>true</Visible>
+            <CreationUpdateNumber>1071</CreationUpdateNumber>
+            <WebService>false</WebService>
+            <CheckRuleFlow>true</CheckRuleFlow>
+            <Stateless>true</Stateless>
+            <DecisionFunctionInput id="L}2760">
+                <Name>order</Name>
+                <Alias>order</Alias>
+                <Description>An xml document fact</Description>
+                <Visible>true</Visible>
+                <CreationUpdateNumber>1073</CreationUpdateNumber>
+                <IDofType>J}example.rules.OrderT</IDofType>
+                <List>false</List>
+                <Tree>true</Tree>
+            </DecisionFunctionInput>
+            <DecisionFunctionInput id="L}2761">
+                <Name>shipCodes</Name>
+                <Alias>shipCodes</Alias>
+                <Description>A list of Java facts</Description>
+                <Visible>true</Visible>
+                <CreationUpdateNumber>1075</CreationUpdateNumber>
+                <IDofType>J}rulesproject.ShipCode</IDofType>
+                <List>true</List>
+                <Tree>false</Tree>
+            </DecisionFunctionInput>
+            <DecisionFunctionRuleSet id="L}2975">
+                <CreationUpdateNumber>1366</CreationUpdateNumber>
+                <Form>rule set</Form>
+                <Ruleset>ShippingRules</Ruleset>
+                <DecisionFunction>ShippingRules</DecisionFunction>
+                <refID>G}-7745b19e:1295bd80fce:-7c2a</refID>
+            </DecisionFunctionRuleSet>
+            <DecisionFunctionOutput id="L}2762">
+                <Name>order</Name>
+                <Alias>order</Alias>
+                <Visible>true</Visible>
+                <CreationUpdateNumber>1084</CreationUpdateNumber>
+                <IDofType>J}example.rules.OrderT</IDofType>
+                <List>false</List>
+                <Tree>true</Tree>
+            </DecisionFunctionOutput>
+            <ValidationUpdateNumber>1386</ValidationUpdateNumber>
+            <RuleFiringLimit>10</RuleFiringLimit>
+        </DecisionFunction>
+        <UpdateNumber>1406</UpdateNumber>
+        <ValidationUpdateNumber>1406</ValidationUpdateNumber>
+    </DataModel>
+    <RuleSet id="G}-7745b19e:1295bd80fce:-7c2a">
+        <Name>ShippingRules</Name>
+        <Alias>ShippingRules</Alias>
+        <Description>A set of rules to execute</Description>
+        <ValidationUpdateNumber>1404</ValidationUpdateNumber>
+        <Customizable>true</Customizable>
+        <Active>true</Active>
+        <CalendarForm>DateTime</CalendarForm>
+        <Rule id="G}-7745b19e:1295bd80fce:-7c29">
+            <Name>Rule_1</Name>
+            <Alias>Rule_1</Alias>
+            <ValidationUpdateNumber>1404</ValidationUpdateNumber>
+            <Priority>medium</Priority>
+            <Customizable>true</Customizable>
+            <Active>true</Active>
+            <CalendarForm>DateTime</CalendarForm>
+            <Pattern id="L}2771">
+                <Form>Fact Type</Form>
+                <FactType>ShipCode</FactType>
+                <IDofFactType>J}rulesproject.ShipCode</IDofFactType>
+                <Connective>&amp;&amp;</Connective>
+                <TestForm>Simple</TestForm>
+                <Expression id="L}2772">
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <Operator>(for each case where)</Operator>
+                <FactPath>ShipCode</FactPath>
+                <FactPathIDs>L}2771</FactPathIDs>
+            </Pattern>
+            <Pattern id="L}2994">
+                <Form>Fact Type</Form>
+                <FactType>ItemT</FactType>
+                <IDofFactType>J}example.rules.ItemT</IDofFactType>
+                <Connective>&amp;&amp;</Connective>
+                <TestForm>Simple</TestForm>
+                <Expression id="L}2995">
+                    <IsConstant>false</IsConstant>
+                    <ParameterID>B}nil</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <Operator>(for each case where)</Operator>
+                <SimpleTest id="L}2765">
+                    <Expression id="L}2766">
+                        <Value>ItemT.productId</Value>
+                        <ResolvedValue>`L}2994`.`J}example.rules.ItemT.{productId}`</ResolvedValue>
+                        <IsConstant>false</IsConstant>
+                        <ParameterID>B}nil</ParameterID>
+                        <Customizable>false</Customizable>
+                    </Expression>
+                    <Expression id="L}2767">
+                        <Value>ShipCode.productId</Value>
+                        <ResolvedValue>`L}2771`.`J}rulesproject.ShipCode.{productId}`</ResolvedValue>
+                        <IsConstant>false</IsConstant>
+                        <ParameterID>B}nil</ParameterID>
+                        <Customizable>false</Customizable>
+                    </Expression>
+                    <IDofOperator>B}==</IDofOperator>
+                    <Connective>&amp;&amp;</Connective>
+                    <Form>FormNotNested</Form>
+                </SimpleTest>
+                <FactPath>ItemT</FactPath>
+                <FactPathIDs>L}2994</FactPathIDs>
+            </Pattern>
+            <ShowPatterns>false</ShowPatterns>
+            <TreeMode>false</TreeMode>
+            <Visible>true</Visible>
+            <Logical>false</Logical>
+            <Action id="L}2776">
+                <Form>Modify</Form>
+                <Target>ItemT</Target>
+                <ResolvedTarget>`L}2994`</ResolvedTarget>
+                <Expression id="L}2777">
+                    <IsConstant>false</IsConstant>
+                    <ParameterAlias>productId</ParameterAlias>
+                    <ParameterID>J}example.rules.ItemT.{productId}</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <Expression id="L}2996">
+                    <IsConstant>false</IsConstant>
+                    <ParameterAlias>quantity</ParameterAlias>
+                    <ParameterID>J}example.rules.ItemT.{quantity}</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <Expression id="L}2997">
+                    <IsConstant>false</IsConstant>
+                    <ParameterAlias>unitPrice</ParameterAlias>
+                    <ParameterID>J}example.rules.ItemT.{unitPrice}</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+                <Expression id="L}3017">
+                    <Value>true</Value>
+                    <ResolvedValue>true</ResolvedValue>
+                    <IsConstant>true</IsConstant>
+                    <ParameterAlias>extraCharge</ParameterAlias>
+                    <ParameterID>J}example.rules.ItemT.{extraCharge}</ParameterID>
+                    <Customizable>false</Customizable>
+                </Expression>
+            </Action>
+        </Rule>
+        <VisibilityFilterEnabled>false</VisibilityFilterEnabled>
+        <CreationUpdateNumber>1089</CreationUpdateNumber>
+    </RuleSet>
+    <IDcounter>3036</IDcounter>
+    <ValidationUpdateNumber>1406</ValidationUpdateNumber>
+    <UpdateNumber>1406</UpdateNumber>
+</RuleDictionary>
